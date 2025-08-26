@@ -1,5 +1,9 @@
 # 🚀 AI Search API + LangChain Integration Guide
 
+[![PyPI version](https://badge.fury.io/py/langchain-aisearchapi.svg)](https://badge.fury.io/py/langchain-aisearchapi)
+[![Python Support](https://img.shields.io/pypi/pyversions/langchain-aisearchapi.svg)](https://pypi.org/project/langchain-aisearchapi/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 > **Transform your AI Search API into a powerful LangChain-compatible tool!**  
 > Build intelligent applications with context-aware search, source attribution, and seamless LangChain ecosystem integration.
 
