@@ -28,7 +28,7 @@ Make sure you have:
 python --version
 
 # Your AI Search API client installed
-pip install aisearchapi
+pip install aisearchapi-client
 
 # LangChain installed
 pip install langchain langchain-community
@@ -319,7 +319,7 @@ os.environ['AI_SEARCH_API_KEY'] = 'your-key'
 ### **Issue 2: Import Errors**
 ```bash
 # Solution: Install dependencies
-pip install langchain langchain-community aisearchapi requests
+pip install langchain langchain-community aisearchapi-client requests
 ```
 
 ### **Issue 3: Rate Limiting**

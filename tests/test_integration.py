@@ -15,6 +15,7 @@ Make sure to set your API key first:
 import os
 import sys
 from typing import Optional
+from langchain_aisearchapi import AISearchLLM
 
 # Color codes for pretty output
 class Colors:
@@ -47,7 +48,7 @@ def test_imports() -> bool:
     """Test if all required imports work"""
     try:
         # Test AI Search API client
-        from aisearchapi import AISearchAPIClient, ChatMessage
+        from aisearchapi_client import AISearchAPIClient, ChatMessage
         print_test("AI Search API import", True)
         
         # Test LangChain
@@ -56,7 +57,7 @@ def test_imports() -> bool:
         print_test("LangChain import", True)
         
         # Test integration module
-        from langchain_aisearch import AISearchLLM, AISearchChat, AISearchTool
+        from langchain_aisearchapi import AISearchLLM, AISearchChat, AISearchTool
         print_test("Integration module import", True)
         
         return True
@@ -82,7 +83,7 @@ def test_api_key() -> Optional[str]:
 def test_connection(api_key: str) -> bool:
     """Test API connection"""
     try:
-        from aisearchapi import AISearchAPIClient
+        from aisearchapi_client import AISearchAPIClient
         
         client = AISearchAPIClient(api_key=api_key)
         balance = client.balance()
@@ -102,7 +103,7 @@ def test_connection(api_key: str) -> bool:
 def test_basic_llm(api_key: str) -> bool:
     """Test basic LLM functionality"""
     try:
-        from langchain_aisearch import AISearchLLM
+        from langchain_aisearchapi import AISearchLLM
         
         llm = AISearchLLM(api_key=api_key, response_type="text")
         response = llm("What is 2+2? Give a very short answer.")
@@ -124,7 +125,7 @@ def test_basic_llm(api_key: str) -> bool:
 def test_chat_model(api_key: str) -> bool:
     """Test chat model functionality"""
     try:
-        from langchain_aisearch import AISearchChat
+        from src.langchain_aisearch.langchain_aisearch import AISearchChat
         from langchain.schema import HumanMessage
         
         chat = AISearchChat(api_key=api_key, response_type="text")
@@ -152,7 +153,7 @@ def test_chat_model(api_key: str) -> bool:
 def test_search_tool(api_key: str) -> bool:
     """Test search tool functionality"""
     try:
-        from langchain_aisearch import AISearchTool
+        from src.langchain_aisearch.langchain_aisearch import AISearchTool
         
         tool = AISearchTool(api_key=api_key)
         result = tool.run("What year was Python created?")
@@ -173,7 +174,7 @@ def test_search_tool(api_key: str) -> bool:
 def test_chains(api_key: str) -> bool:
     """Test pre-built chains"""
     try:
-        from langchain_aisearch import create_research_chain, create_qa_chain
+        from src.langchain_aisearch.langchain_aisearch import create_research_chain, create_qa_chain
         
         # Test research chain
         research_chain = create_research_chain(api_key=api_key)
@@ -194,7 +195,7 @@ def run_integration_demo(api_key: str):
     print_header("🎭 INTEGRATION DEMO")
     
     try:
-        from langchain_aisearch import AISearchLLM, AISearchTool
+        from langchain_aisearchapi import AISearchLLM, AISearchTool
         from langchain.agents import initialize_agent, AgentType
         from langchain.chains import LLMChain
         from langchain.prompts import PromptTemplate
@@ -238,7 +239,7 @@ def main():
     print(f"{Colors.BOLD}Step 1: Testing imports...{Colors.ENDC}")
     if not test_imports():
         print(f"\n{Colors.FAIL}Please install required packages:{Colors.ENDC}")
-        print("pip install aisearchapi langchain langchain-community")
+        print("pip install aisearchapi-client langchain langchain-community")
         sys.exit(1)
     
     # Test 2: API Key
