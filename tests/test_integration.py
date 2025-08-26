@@ -125,7 +125,7 @@ def test_basic_llm(api_key: str) -> bool:
 def test_chat_model(api_key: str) -> bool:
     """Test chat model functionality"""
     try:
-        from src.langchain_aisearch.langchain_aisearch import AISearchChat
+        from langchain_aisearchapi import AISearchChat
         from langchain.schema import HumanMessage
         
         chat = AISearchChat(api_key=api_key, response_type="text")
@@ -153,7 +153,7 @@ def test_chat_model(api_key: str) -> bool:
 def test_search_tool(api_key: str) -> bool:
     """Test search tool functionality"""
     try:
-        from src.langchain_aisearch.langchain_aisearch import AISearchTool
+        from langchain_aisearchapi import AISearchTool
         
         tool = AISearchTool(api_key=api_key)
         result = tool.run("What year was Python created?")
@@ -174,7 +174,7 @@ def test_search_tool(api_key: str) -> bool:
 def test_chains(api_key: str) -> bool:
     """Test pre-built chains"""
     try:
-        from src.langchain_aisearch.langchain_aisearch import create_research_chain, create_qa_chain
+        from langchain_aisearchapi import create_research_chain, create_qa_chain
         
         # Test research chain
         research_chain = create_research_chain(api_key=api_key)
