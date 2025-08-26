@@ -36,7 +36,7 @@ pip install langchain langchain-community
 
 ### **Step 2: Save the Integration Code** 💾
 
-1. Create a new file called `langchain_aisearch.py`
+1. Create a new file called `langchain_aisearchapi.py`
 2. Copy the entire integration code from the artifact above
 3. Save it in your project directory
 
@@ -67,7 +67,7 @@ llm = AISearchLLM()
 Run this quick test:
 
 ```python
-from langchain_aisearch import test_connection, AISearchLLM
+from langchain_aisearchapi import test_connection, AISearchLLM
 
 # Test connection
 if test_connection():
@@ -85,7 +85,7 @@ if test_connection():
 
 ### **Example 1: Basic LLM Usage** 
 ```python
-from langchain_aisearch import AISearchLLM
+from langchain_aisearchapi import AISearchLLM
 
 # Initialize
 llm = AISearchLLM(
@@ -101,7 +101,7 @@ print(response)
 
 ### **Example 2: Chat with Memory** 💬
 ```python
-from langchain_aisearch import AISearchChat
+from langchain_aisearchapi import AISearchChat
 from langchain.schema import HumanMessage
 
 # Initialize chat
@@ -119,7 +119,7 @@ print(response.content)
 
 ### **Example 3: Research Assistant** 📚
 ```python
-from langchain_aisearch import create_research_chain
+from langchain_aisearchapi import create_research_chain
 
 # Create research chain
 research = create_research_chain(api_key='your-key')
@@ -131,7 +131,7 @@ print(result)
 
 ### **Example 4: Building an Agent** 🤖
 ```python
-from langchain_aisearch import AISearchTool, AISearchLLM
+from langchain_aisearchapi import AISearchTool, AISearchLLM
 from langchain.agents import initialize_agent, AgentType
 
 # Setup tools and LLM
@@ -156,7 +156,7 @@ print(result)
 
 ### **Example 5: Document Q&A System** 📄
 ```python
-from langchain_aisearch import AISearchLLM
+from langchain_aisearchapi import AISearchLLM
 from langchain.chains import RetrievalQA
 from langchain.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
@@ -194,7 +194,7 @@ print(result['result'])
 
 ### **Pattern 1: Streaming Responses** 
 ```python
-from langchain_aisearch import AISearchChat
+from langchain_aisearchapi import AISearchChat
 
 chat = AISearchChat(api_key='your-key', streaming=True)
 
@@ -205,7 +205,7 @@ for chunk in chat.stream([HumanMessage(content="Tell me a story")]):
 
 ### **Pattern 2: Custom Prompt Templates** 
 ```python
-from langchain_aisearch import AISearchLLM
+from langchain_aisearchapi import AISearchLLM
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
@@ -225,7 +225,7 @@ result = chain.run(product="AI Search API", audience="developers")
 
 ### **Pattern 3: Multi-Tool Agents** 
 ```python
-from langchain_aisearch import AISearchTool, create_balance_tool, AISearchLLM
+from langchain_aisearchapi import AISearchTool, create_balance_tool, AISearchLLM
 from langchain.agents import initialize_agent, AgentType
 from langchain.tools import DuckDuckGoSearchRun
 
@@ -247,7 +247,7 @@ agent = initialize_agent(
 ### **Pattern 4: Async Operations** 
 ```python
 import asyncio
-from langchain_aisearch import AISearchLLM
+from langchain_aisearchapi import AISearchLLM
 
 async def async_search():
     llm = AISearchLLM(api_key='your-key')
@@ -366,7 +366,7 @@ results = llm.batch(queries)
 
 ### **3. Cost Optimization** 
 ```python
-from langchain_aisearch import estimate_cost
+from langchain_aisearchapi import estimate_cost
 
 # Estimate before querying
 query = "Your long research query here..."
@@ -385,7 +385,7 @@ if cost > 0.10:  # If over 10 cents
 
 1. **✅ Test the Integration**
    ```python
-   from langchain_aisearch import test_connection
+   from langchain_aisearchapi import test_connection
    test_connection()  # Should show your balance
    ```
 
