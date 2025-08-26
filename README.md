@@ -1,148 +1,79 @@
-# 🚀 AI Search API + LangChain Integration Guide
+# 🚀 LangChain AI Search API Integration
 
-[![PyPI version](https://badge.fury.io/py/langchain-aisearchapi.svg)](https://badge.fury.io/py/langchain-aisearchapi)
+[![PyPI version](https://badge.fury.io/py/langchain-aisearchapi.svg)](https://pypi.org/project/langchain-aisearchapi/)
 [![Python Support](https://img.shields.io/pypi/pyversions/langchain-aisearchapi.svg)](https://pypi.org/project/langchain-aisearchapi/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **Transform your AI Search API into a powerful LangChain-compatible tool!**  
-> Build intelligent applications with context-aware search, source attribution, and seamless LangChain ecosystem integration.
+> **Official [LangChain](https://python.langchain.com/) integration for the [AI Search API](https://aisearchapi.io/).**  
+> Use semantic search, contextual answers, and intelligent agents in your LangChain projects with **just one package**.
 
 ---
 
-## 🌟 What This Integration Gives You
+## ✨ Features
 
-### **The Power Combo** 
-Your AI Search API client + LangChain = **Unlimited Possibilities**
+- 🔑 **One Package Setup** – `pip install langchain-aisearchapi` and you’re ready  
+- 🤖 **LLM Interface** – Use AI Search API as a LangChain LLM  
+- 💬 **Chat Model** – Build conversational agents with context memory  
+- 🛠️ **Tools for Agents** – Add AI Search directly into LangChain workflows  
+- 📚 **Prebuilt Chains** – Research, Q&A, fact-checking out of the box  
 
-- 🤖 **LLM Interface** - Use AI Search as a drop-in LLM replacement
-- 💬 **Chat Models** - Build conversational AI with context memory
-- 🛠️ **Custom Tools** - Integrate search into agents and workflows
-- 🔗 **Pre-built Chains** - Research, Q&A, and fact-checking out of the box
-- 📊 **Full Ecosystem** - Works with all LangChain components
+👉 To start, create an account and get your API key:  
+- [🆕 Sign Up](https://app.aisearchapi.io/join)  
+- [🔑 Log In](https://app.aisearchapi.io/login)  
+- [📊 Dashboard](https://app.aisearchapi.io/dashboard)  
 
 ---
 
-## 📋 Step-by-Step Setup Guide
+## ⚡ Installation
 
-### **Step 1: Prerequisites** ✅
+Install the integration from [PyPI](https://pypi.org/project/langchain-aisearchapi/):
 
-Make sure you have:
 ```bash
-# Python 3.8 or higher
-python --version
-
-# Your AI Search API client installed
-pip install aisearchapi-client
-
-# LangChain installed
-pip install langchain langchain-community
+pip install langchain-aisearchapi
 ```
 
-### **Step 2: Save the Integration Code** 💾
-
-1. Create a new file called `langchain_aisearchapi.py`
-2. Copy the entire integration code from the artifact above
-3. Save it in your project directory
-
-### **Step 3: Set Your API Key** 🔑
-
-Choose one of these methods:
-
-**Option A: Environment Variable (Recommended)**
-```bash
-export AI_SEARCH_API_KEY='your-api-key-here'
-```
-
-**Option B: Direct in Code**
-```python
-llm = AISearchLLM(api_key='your-api-key-here')
-```
-
-**Option C: From .env File**
-```python
-from dotenv import load_dotenv
-load_dotenv()
-# Then use without specifying api_key
-llm = AISearchLLM()
-```
-
-### **Step 4: Test Your Setup** 🧪
-
-Run this quick test:
-
-```python
-from langchain_aisearchapi import test_connection, AISearchLLM
-
-# Test connection
-if test_connection():
-    print("✅ Connection successful!")
-    
-    # Test basic functionality
-    llm = AISearchLLM()
-    response = llm("Hello, can you hear me?")
-    print(f"Response: {response}")
-```
+That’s it — no extra setup required.  
 
 ---
 
-## 🎯 Quick Start Examples
+## 🚀 Quick Start
 
-### **Example 1: Basic LLM Usage** 
+### 1. Basic LLM Usage
+
 ```python
 from langchain_aisearchapi import AISearchLLM
 
-# Initialize
-llm = AISearchLLM(
-    api_key='your-key',
-    response_type='markdown',
-    include_sources=True
-)
-
-# Simple query
-response = llm("Explain machine learning in simple terms")
+llm = AISearchLLM(api_key="your-key")
+response = llm("Explain semantic search in simple terms")
 print(response)
 ```
 
-### **Example 2: Chat with Memory** 💬
+### 2. Conversational Chat
+
 ```python
 from langchain_aisearchapi import AISearchChat
 from langchain.schema import HumanMessage
 
-# Initialize chat
-chat = AISearchChat(api_key='your-key')
+chat = AISearchChat(api_key="your-key")
 
-# Have a conversation
 messages = [
-    HumanMessage(content="What is Python?"),
-    HumanMessage(content="What makes it good for beginners?")
+    HumanMessage(content="What is LangChain?"),
+    HumanMessage(content="Why do developers use it?")
 ]
 
 response = chat(messages)
 print(response.content)
 ```
 
-### **Example 3: Research Assistant** 📚
-```python
-from langchain_aisearchapi import create_research_chain
+### 3. AI Search as a Tool in Agents
 
-# Create research chain
-research = create_research_chain(api_key='your-key')
-
-# Do research
-result = research.run("Latest breakthroughs in renewable energy 2024")
-print(result)
-```
-
-### **Example 4: Building an Agent** 🤖
 ```python
 from langchain_aisearchapi import AISearchTool, AISearchLLM
 from langchain.agents import initialize_agent, AgentType
 
-# Setup tools and LLM
-search_tool = AISearchTool(api_key='your-key')
-llm = AISearchLLM(api_key='your-key')
+search_tool = AISearchTool(api_key="your-key")
+llm = AISearchLLM(api_key="your-key")
 
-# Create agent
 agent = initialize_agent(
     tools=[search_tool],
     llm=llm,
@@ -150,305 +81,68 @@ agent = initialize_agent(
     verbose=True
 )
 
-# Run complex query
-result = agent.run(
-    "Find information about SpaceX's latest launch and "
-    "explain how it compares to previous missions"
-)
+result = agent.run("Find the latest SpaceX launch details")
 print(result)
 ```
 
-### **Example 5: Document Q&A System** 📄
+### 4. Research Assistant
+
 ```python
-from langchain_aisearchapi import AISearchLLM
-from langchain.chains import RetrievalQA
-from langchain.document_loaders import TextLoader
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.vectorstores import FAISS
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_aisearchapi import create_research_chain
 
-# Load documents
-loader = TextLoader("your_document.txt")
-documents = loader.load()
-
-# Split into chunks
-text_splitter = CharacterTextSplitter(chunk_size=1000)
-texts = text_splitter.split_documents(documents)
-
-# Create vector store
-embeddings = HuggingFaceEmbeddings()
-vectorstore = FAISS.from_documents(texts, embeddings)
-
-# Create Q&A chain with AI Search
-llm = AISearchLLM(api_key='your-key')
-qa_chain = RetrievalQA.from_chain_type(
-    llm=llm,
-    retriever=vectorstore.as_retriever(),
-    return_source_documents=True
-)
-
-# Ask questions
-result = qa_chain({"query": "What is the main topic?"})
-print(result['result'])
+research = create_research_chain(api_key="your-key")
+result = research.run("Breakthroughs in AI search technology 2024")
+print(result)
 ```
 
 ---
 
-## 🎨 Advanced Usage Patterns
-
-### **Pattern 1: Streaming Responses** 
-```python
-from langchain_aisearchapi import AISearchChat
-
-chat = AISearchChat(api_key='your-key', streaming=True)
-
-# Stream responses (simulated)
-for chunk in chat.stream([HumanMessage(content="Tell me a story")]):
-    print(chunk.content, end='', flush=True)
-```
-
-### **Pattern 2: Custom Prompt Templates** 
-```python
-from langchain_aisearchapi import AISearchLLM
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
-
-llm = AISearchLLM(api_key='your-key')
-
-prompt = PromptTemplate(
-    input_variables=["product", "audience"],
-    template="""
-    Create a marketing pitch for {product} targeting {audience}.
-    Include benefits, use cases, and a call to action.
-    """
-)
-
-chain = LLMChain(llm=llm, prompt=prompt)
-result = chain.run(product="AI Search API", audience="developers")
-```
-
-### **Pattern 3: Multi-Tool Agents** 
-```python
-from langchain_aisearchapi import AISearchTool, create_balance_tool, AISearchLLM
-from langchain.agents import initialize_agent, AgentType
-from langchain.tools import DuckDuckGoSearchRun
-
-# Multiple tools
-ai_search = AISearchTool(api_key='your-key')
-balance_checker = create_balance_tool(api_key='your-key')
-web_search = DuckDuckGoSearchRun()
-
-# Create powerful agent
-llm = AISearchLLM(api_key='your-key')
-agent = initialize_agent(
-    tools=[ai_search, balance_checker, web_search],
-    llm=llm,
-    agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
-    verbose=True
-)
-```
-
-### **Pattern 4: Async Operations** 
-```python
-import asyncio
-from langchain_aisearchapi import AISearchLLM
-
-async def async_search():
-    llm = AISearchLLM(api_key='your-key')
-    
-    # Run multiple searches concurrently
-    queries = [
-        "What is quantum computing?",
-        "Explain blockchain technology",
-        "How does AI work?"
-    ]
-    
-    tasks = [llm.agenerate([q]) for q in queries]
-    results = await asyncio.gather(*tasks)
-    
-    for q, r in zip(queries, results):
-        print(f"Q: {q}\nA: {r.generations[0][0].text}\n")
-
-# Run async
-asyncio.run(async_search())
-```
-
----
-
-## 🛠️ Component Reference
-
-### **Core Classes**
+## 🛠️ Components
 
 | Component | Description | Use Case |
 |-----------|-------------|----------|
-| `AISearchLLM` | Basic LLM interface | Simple text generation, completion |
-| `AISearchChat` | Chat model with context | Conversational AI, chatbots |
-| `AISearchTool` | Search as a tool | Agents, complex workflows |
+| `AISearchLLM` | AI Search API as an LLM | Completions, text generation |
+| `AISearchChat` | Chat model with context | Conversational AI, assistants |
+| `AISearchTool` | Search as LangChain tool | Agents, workflows |
+| `create_research_chain()` | Ready-made chain | Research and reporting |
 
-### **Pre-built Chains**
-
-| Chain | Purpose | Example |
-|-------|---------|---------|
-| `create_research_chain()` | In-depth research | Academic papers, reports |
-| `create_qa_chain()` | Q&A with memory | Customer support, FAQ bots |
-| `create_fact_checker_chain()` | Verify claims | Content moderation, validation |
-
-### **Configuration Options**
-
-```python
-# All configuration options
-llm = AISearchLLM(
-    api_key='your-key',           # API key (required)
-    base_url='https://...',        # API endpoint (optional)
-    timeout=30,                    # Request timeout in seconds
-    response_type='markdown',      # 'markdown' or 'text'
-    include_sources=True,          # Include source URLs
-)
-```
+Full API reference: [AI Search API Docs](https://docs.aisearchapi.io/).
 
 ---
 
-## 🚨 Common Issues & Solutions
+## ❗ Troubleshooting
 
-### **Issue 1: API Key Not Found**
-```python
-# Solution: Check environment variable
-import os
-print(os.getenv('AI_SEARCH_API_KEY'))  # Should print your key
+- **No API key?** → [Sign up](https://app.aisearchapi.io/join) or [log in](https://app.aisearchapi.io/login).  
+- **Key issues?** → Check your [dashboard](https://app.aisearchapi.io/dashboard).  
+- **Rate limited?** → Use retry logic with [tenacity](https://tenacity.readthedocs.io/).  
 
-# Or set it explicitly
-os.environ['AI_SEARCH_API_KEY'] = 'your-key'
-```
+---
 
-### **Issue 2: Import Errors**
+## 📚 Resources
+
+- [AI Search API Homepage](https://aisearchapi.io/)  
+- [Join / Sign Up](https://app.aisearchapi.io/join)  
+- [Log In](https://app.aisearchapi.io/login)  
+- [Dashboard](https://app.aisearchapi.io/dashboard)  
+- [Documentation](https://docs.aisearchapi.io/)  
+- [PyPI Package](https://pypi.org/project/langchain-aisearchapi/)  
+
+---
+
+## 🎉 Start Now
+
+Install the package, get your API key, and build **powerful LangChain apps** with the AI Search API:  
 ```bash
-# Solution: Install dependencies
-pip install langchain langchain-community aisearchapi-client requests
+pip install langchain-aisearchapi
 ```
 
-### **Issue 3: Rate Limiting**
-```python
-# Solution: Add retry logic
-from tenacity import retry, stop_after_attempt, wait_exponential
-
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
-def search_with_retry(llm, query):
-    return llm(query)
-```
-
-### **Issue 4: Context Too Long**
-```python
-# Solution: Truncate context
-def truncate_context(messages, max_messages=10):
-    return messages[-max_messages:]  # Keep last N messages
-```
+👉 [Join now](https://app.aisearchapi.io/join) to claim your free API key and start building!  
 
 ---
 
-## 📊 Performance Tips
-
-### **1. Caching Responses** 
-```python
-from langchain.cache import InMemoryCache
-import langchain
-
-# Enable caching
-langchain.llm_cache = InMemoryCache()
-
-# Now repeated queries are cached
-llm = AISearchLLM(api_key='your-key')
-response1 = llm("What is AI?")  # Makes API call
-response2 = llm("What is AI?")  # Returns cached result
-```
-
-### **2. Batch Processing** 
-```python
-# Process multiple queries efficiently
-queries = ["Query 1", "Query 2", "Query 3"]
-results = llm.batch(queries)
-```
-
-### **3. Cost Optimization** 
-```python
-from langchain_aisearchapi import estimate_cost
-
-# Estimate before querying
-query = "Your long research query here..."
-cost = estimate_cost(query)
-print(f"Estimated cost: ${cost:.4f}")
-
-if cost > 0.10:  # If over 10 cents
-    print("⚠️ This query might be expensive!")
-```
+*Made with ❤️ for the AI Search API + LangChain developer community*
 
 ---
 
-## 🎉 What to Do Next
-
-### **Immediate Actions:**
-
-1. **✅ Test the Integration**
-   ```python
-   from langchain_aisearchapi import test_connection
-   test_connection()  # Should show your balance
-   ```
-
-2. **🏃 Run Example Scripts**
-   - Copy any example from above
-   - Replace 'your-key' with your actual API key
-   - Run and see the magic happen!
-
-3. **🔧 Customize for Your Needs**
-   - Adjust `response_type` for your use case
-   - Set `include_sources=False` if you don't need citations
-   - Modify timeout for longer queries
-
-### **Next Level Projects:**
-
-1. **Build a Customer Support Bot** 
-   - Use `AISearchChat` with conversation memory
-   - Add your company knowledge base
-   - Deploy with Flask/FastAPI
-
-2. **Create a Research Assistant** 
-   - Combine with document loaders
-   - Add PDF/URL reading capabilities
-   - Export reports automatically
-
-3. **Develop a Fact-Checking System** 
-   - Use the fact-checker chain
-   - Add to your content pipeline
-   - Automate content validation
-
-4. **Make an AI Agent** 
-   - Combine multiple tools
-   - Add custom functions
-   - Create autonomous workflows
-
----
-
-## 📚 Additional Resources
-
-- **AI Search API Docs**: Check your original documentation
-- **LangChain Docs**: [python.langchain.com](https://python.langchain.com)
-- **Community Examples**: Share and find examples in LangChain Discord
-- **Support**: Reach out if you need help!
-
----
-
-## 🎊 Congratulations!
-
-You now have a fully functional LangChain integration for your AI Search API! 
-
-**Your AI Search API is now:**
-- ✅ LangChain compatible
-- ✅ Ready for production use
-- ✅ Integrated with the entire ecosystem
-- ✅ Equipped with advanced features
-
-**Start building amazing things!** 🚀
-
----
-
-*Made with ❤️ for the AI Search API community*
-
+### SEO Keywords  
+*LangChain AI Search API integration, AI Search API Python package, semantic search LangChain, contextual AI LangChain, AI chatbot LangChain, AI Search API key setup*
