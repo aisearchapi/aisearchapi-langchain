@@ -21,9 +21,9 @@ Bring **semantic search**, **contextual answers**, **summarization**, and **inte
 
 ## 🔑 Get Started
 
-1. [🆕 Sign Up](https://aisearchapi.io/join?utm_source=pypi)  
-2. [🔑 Log In](https://aisearchapi.io/login?utm_source=pypi)  
-3. [📊 Dashboard](https://aisearchapi.io/dashboard?utm_source=pypi) → Copy your API key  
+1. [🆕 Sign Up](https://app.aisearchapi.io/join?utm_source=pypi)  
+2. [🔑 Log In](https://app.aisearchapi.io/login?utm_source=pypi)  
+3. [📊 Dashboard](https://app.aisearchapi.io/dashboard?utm_source=pypi) → Copy your API key  
 
 ---
 
@@ -111,8 +111,8 @@ print(summary)
 
 ## ❗ Troubleshooting
 
-- **No API key?** → [Sign up](https://aisearchapi.io/join?utm_source=pypi)  
-- **Issues with key?** → Check [Dashboard](https://aisearchapi.io/dashboard?utm_source=pypi)  
+- **No API key?** → [Sign up](https://app.aisearchapi.io/join?utm_source=pypi)  
+- **Issues with key?** → Check [Dashboard](https://app.aisearchapi.io/dashboard?utm_source=pypi)  
 - **Rate limited?** → Add retries (e.g. with [tenacity](https://pypi.org/project/tenacity/))  
 
 ---
@@ -132,7 +132,7 @@ print(summary)
 pip install langchain-aisearchapi
 ```
 
-👉 [Join now](https://aisearchapi.io/join?utm_source=pypi) for a free API key and start building!
+👉 [Join now](https://app.aisearchapi.io/join?utm_source=pypi) for a free API key and start building!
 
 ---
 

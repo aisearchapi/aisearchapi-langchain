@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "langchain-aisearchapi"   # distribution name on PyPI
-version = "1.0.4"
+version = "1.0.5"
 description = "LangChain integration for AI Search API (LLM, Chat, tools, and chains)."
 readme = "README-pypi.md"
 license = { file = "LICENSE" }
