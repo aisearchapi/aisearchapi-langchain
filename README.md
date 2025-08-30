@@ -4,7 +4,7 @@
 [![Python Support](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Official **LangChain integration** for the [AI Search API](https://aisearchapi.io).  
+Official **LangChain integration** for the [AI Search API](https://aisearchapi.io?utm_source=github).  
 Use **semantic search**, **contextual answers**, **summarization**, and **intelligent agents** in your LangChain projects with just one package.
 
 ---
@@ -22,9 +22,9 @@ Use **semantic search**, **contextual answers**, **summarization**, and **intell
 ## 🔑 Get Started
 
 Create an account and get your API key:  
-- [🆕 Sign Up](https://aisearchapi.io/join)  
-- [🔑 Log In](https://aisearchapi.io/login)  
-- [📊 Dashboard](https://aisearchapi.io/dashboard)  
+- [🆕 Sign Up](https://aisearchapi.io/join?utm_source=github)  
+- [🔑 Log In](https://aisearchapi.io/login?utm_source=github)  
+- [📊 Dashboard](https://aisearchapi.io/dashboard?utm_source=github)  
 
 ---
 
@@ -123,16 +123,16 @@ print(summary)
 
 ## ❗ Troubleshooting
 
-- **No API key?** → [Sign up](https://aisearchapi.io/join) or [Log in](https://aisearchapi.io/login)  
-- **Key issues?** → Check your [dashboard](https://aisearchapi.io/dashboard)  
+- **No API key?** → [Sign up](https://aisearchapi.io/join?utm_source=github) or [Log in](https://aisearchapi.io/login?utm_source=github)  
+- **Key issues?** → Check your [dashboard](https://aisearchapi.io/dashboard?utm_source=github)  
 - **Rate limited?** → Use retry logic with [tenacity](https://pypi.org/project/tenacity/)  
 
 ---
 
 ## 📚 Resources
 
-- [🌐 AI Search API Homepage](https://aisearchapi.io)  
-- [📘 Documentation](https://docs.aisearchapi.io)  
+- [🌐 AI Search API Homepage](https://aisearchapi.io?utm_source=github)  
+- [📘 Documentation](https://docs.aisearchapi.io?utm_source=github)  
 - [📦 PyPI Package](https://pypi.org/project/langchain-aisearchapi/)  
 - [Blog](https://aisearchapi.io/blog/)
 
@@ -146,7 +146,7 @@ Install the package, get your API key, and build powerful LangChain apps with th
 pip install langchain-aisearchapi
 ```
 
-👉 [Join now](https://aisearchapi.io/join) to claim your free API key and start building!
+👉 [Join now](https://aisearchapi.io/join?utm_source=github) to claim your free API key and start building!
 
 ---
 
