@@ -134,6 +134,7 @@ print(summary)
 - [🌐 AI Search API Homepage](https://aisearchapi.io)  
 - [📘 Documentation](https://docs.aisearchapi.io)  
 - [📦 PyPI Package](https://pypi.org/project/langchain-aisearchapi/)  
+- [Blog](https://aisearchapi.io/blog/)
 
 ---
 
