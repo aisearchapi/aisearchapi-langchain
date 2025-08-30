@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "langchain-aisearchapi"   # distribution name on PyPI
-version = "1.0.1"
+version = "1.0.2"
 description = "LangChain integration for AI Search API (LLM, Chat, tools, and chains)."
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -12,7 +12,33 @@ requires-python = ">=3.9"
 authors = [
   { name = "AI Search API Team" }
 ]
-keywords = ["langchain", "search", "agents", "tools", "llm", "ai"]
+keywords = [
+  "langchain",
+  "langchain-integration",
+  "langchain-extension",
+  "langchain-tools",
+  "aisearchapi",
+  "ai search api",
+  "semantic search",
+  "web search api",
+  "search api",
+  "summarization api",
+  "summary api",
+  "contextual ai",
+  "contextual search",
+  "ai agents",
+  "intelligent agents",
+  "llm",
+  "large language models",
+  "chat models",
+  "ai chatbot",
+  "nlp",
+  "research chain",
+  "fact checking",
+  "question answering",
+  "automation",
+  "python ai"
+]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Developers",
